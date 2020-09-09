@@ -28,6 +28,10 @@ public class MapUtil {
 		WritableMap map = Arguments.createMap();
 
 		try {
+			Map<String, Object> customFields = new HashMap<>();
+			customFields.putAll(product.getCustomFields());
+
+			map.putMap("customFields", toWritableMap(customFields));
 			map.putString("productId", product.getProductId());
 			map.putString("title", product.getTitle());
 			map.putString("linkUrl", product.getLinkUrl().toString());
@@ -46,12 +50,6 @@ public class MapUtil {
 			map.putDouble("price", product.getPrice());
 			map.putDouble("msrp", product.getMsrp());
 			map.putInt("year", product.getYear());
-
-			Map<String, Object> customFields = new HashMap<>();
-			customFields.putAll(product.getCustomFields());
-
-			map.putMap("customFields", toWritableMap(customFields));
-
 		} catch (NullPointerException e) {
 			Log.d("Logs", "Product has null value");
 		}
