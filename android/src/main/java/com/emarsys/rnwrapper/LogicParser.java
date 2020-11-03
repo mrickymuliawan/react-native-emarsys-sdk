@@ -13,6 +13,8 @@ import static com.emarsys.predict.api.model.RecommendationLogic.CATEGORY;
 import static com.emarsys.predict.api.model.RecommendationLogic.POPULAR;
 import static com.emarsys.predict.api.model.RecommendationLogic.RELATED;
 import static com.emarsys.predict.api.model.RecommendationLogic.SEARCH;
+import static com.emarsys.predict.api.model.RecommendationLogic.HOME;
+import static com.emarsys.predict.api.model.RecommendationLogic.PERSONAL;
 
 public class LogicParser {
 
@@ -34,6 +36,11 @@ public class LogicParser {
 			case POPULAR:
 				recommendedLogic = RecommendationLogic.popular();
 				break;
+			case HOME:
+				recommendedLogic = RecommendationLogic.home();
+				break;
+			case PERSONAL:
+				recommendedLogic = RecommendationLogic.personal();
 			default:
 				recommendedLogic = RecommendationLogic.search();
 		}
