@@ -41,6 +41,7 @@ public class LogicParser {
 				break;
 			case PERSONAL:
 				recommendedLogic = RecommendationLogic.personal();
+				break;
 			default:
 				recommendedLogic = RecommendationLogic.search();
 		}
