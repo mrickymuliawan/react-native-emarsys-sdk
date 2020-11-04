@@ -6,6 +6,7 @@ import com.emarsys.predict.api.model.RecommendationLogic;
 import com.facebook.react.bridge.ReadableArray;
 
 import java.util.List;
+import java.util.ArrayList;
 
 import static com.emarsys.predict.api.model.RecommendationLogic.ALSO_BOUGHT;
 import static com.emarsys.predict.api.model.RecommendationLogic.CART;
@@ -37,7 +38,17 @@ public class LogicParser {
 				recommendedLogic = RecommendationLogic.popular();
 				break;
 			case HOME:
-				recommendedLogic = RecommendationLogic.home();
+				List<String> variants = new ArrayList<String>();
+				variants.add("1");
+				variants.add("2");
+				variants.add("3");
+				variants.add("4");
+				variants.add("5");
+				variants.add("6");
+				variants.add("7");
+				variants.add("8");
+				variants.add("9");
+				recommendedLogic = RecommendationLogic.home(variants);
 				break;
 			case PERSONAL:
 				recommendedLogic = RecommendationLogic.personal();
