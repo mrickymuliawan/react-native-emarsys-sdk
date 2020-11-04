@@ -27,6 +27,12 @@
     else if([logic isEqualToString:@"POPULAR"]) {
         recommendedLogic = EMSLogic.popular;
     }
+    else if([logic isEqualToString:@"HOME"]) {
+        recommendedLogic = [EMSLogic homeWithVariants:@[@"1", @"2", @"3", @"4", @"5", @"6", @"7", @"8", @"9"]];
+    }
+    else if([logic isEqualToString:@"PERSONAL"]) {
+        recommendedLogic = EMSLogic.personal;
+    }
     
     return recommendedLogic;
 }
